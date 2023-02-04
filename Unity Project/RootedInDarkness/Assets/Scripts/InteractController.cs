@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ViewModelType { Idle,Point,Interact,Grab,Punch,Key,Machete,Screwdriver,Fuck}
 public class InteractController : MonoBehaviour
 {
     [SerializeField] float interactLenght = 1000;

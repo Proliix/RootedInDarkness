@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public enum ViewModelType { Idle,Point,Interact,Grab,Punch,Key,Machete,Screwdriver,Fuck}
+public enum ViewModelType { Idle,Point,Interact,Grab,Key,Machete,Screwdriver,Fuck}
 public class InteractController : MonoBehaviour
 {
     [SerializeField] float interactLenght = 1000;
+    [SerializeField] Sprite idle, point, interact, grab, key, machete, screwdriver, fuck;
+    [SerializeField] ViewModelType currentViewModel;
+    [SerializeField] ViewModelType currentIdle;
+    [SerializeField] Image hudImage;
 
     RaycastHit hit;
     bool lookingAtInteractable;
@@ -15,6 +20,43 @@ public class InteractController : MonoBehaviour
     void Start()
     {
 
+    }
+
+    void UpdateImage()
+    {
+        switch (currentViewModel)
+        {
+            case ViewModelType.Idle:
+                if (currentIdle != ViewModelType.Idle)
+                {
+                    currentViewModel = currentIdle;
+                    UpdateImage();
+                }
+                else
+                    hudImage.sprite = idle;
+                break;
+            case ViewModelType.Point:
+                    hudImage.sprite = point;
+                break;
+            case ViewModelType.Interact:
+                    hudImage.sprite = interact;
+                break;
+            case ViewModelType.Grab:
+                    hudImage.sprite = grab;
+                break;
+            case ViewModelType.Key:
+                    hudImage.sprite = key;
+                break;
+            case ViewModelType.Machete:
+                    hudImage.sprite = machete;
+                break;
+            case ViewModelType.Screwdriver:
+                    hudImage.sprite = screwdriver;
+                break;
+            case ViewModelType.Fuck:
+                    hudImage.sprite = fuck;
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -45,11 +87,21 @@ public class InteractController : MonoBehaviour
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, interactLenght, layerMask))
         {
+            if (!lookingAtInteractable)
+            {
+                currentViewModel = ViewModelType.Interact;
+                UpdateImage();
+            }
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             lookingAtInteractable = true;
         }
         else
         {
+            if (lookingAtInteractable)
+            {
+                currentViewModel = ViewModelType.Idle;
+                UpdateImage();
+            }
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * interactLenght, Color.white);
             lookingAtInteractable = false;
         }

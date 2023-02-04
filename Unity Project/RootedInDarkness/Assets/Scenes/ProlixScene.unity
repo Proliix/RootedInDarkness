@@ -41005,6 +41005,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1754319181, guid: e8bca1e7c57124e419a2d69a3284159d, type: 3}
+      propertyPath: hudImage
+      value: 
+      objectReference: {fileID: 1858150112}
     - target: {fileID: 7629442961063787707, guid: e8bca1e7c57124e419a2d69a3284159d,
         type: 3}
       propertyPath: m_RootOrder
@@ -43587,7 +43591,7 @@ GameObject:
   - component: {fileID: 1858150113}
   - component: {fileID: 1858150112}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Viewmodel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

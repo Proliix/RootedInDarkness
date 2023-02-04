@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DitheredMaterialBase
+  m_Name: New default
   m_Shader: {fileID: -6465566751694194690, guid: 55fbb325aa289884b96761e609413d04,
     type: 3}
   m_Parent: {fileID: 0}

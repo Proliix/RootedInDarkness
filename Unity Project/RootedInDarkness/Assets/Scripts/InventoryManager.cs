@@ -15,15 +15,15 @@ public class InventoryManager : MonoBehaviour
         keys.Add(keyNum);
     }
 
-    public int FindKey(int keyNum)
+    public bool FindKey(int keyNum)
     {
-        int returnValue = -1;
+        bool returnValue = false;
 
         for (int i = 0; i < keys.Count; i++)
         {
             if (keys[i] == keyNum)
             {
-                returnValue = keyNum;
+                returnValue = true;
                 break;
             }
         }

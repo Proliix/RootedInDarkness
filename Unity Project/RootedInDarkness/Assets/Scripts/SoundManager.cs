@@ -6,6 +6,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
+    [SerializeField] AudioSource clipSource;
     private float timer;
     private float randomAmbianceTimer;
     AudioSource effectSource;
@@ -63,7 +64,7 @@ public class SoundManager : MonoBehaviour
     {
         Debug.Log("Playing: " + clip.name);
         
-        effectSource.PlayOneShot(clip);
+        clipSource.PlayOneShot(clip);
         
     }
 

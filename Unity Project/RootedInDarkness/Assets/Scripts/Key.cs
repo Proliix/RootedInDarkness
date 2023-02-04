@@ -5,6 +5,7 @@ using UnityEngine;
 public class Key : MonoBehaviour, IInteractable
 {
     public int KeyNum;
+    [SerializeField] AudioClip clip;
 
     InventoryManager invManager;
     private void Start()
@@ -15,6 +16,10 @@ public class Key : MonoBehaviour, IInteractable
     {
         Debug.LogError(KeyNum);
         invManager.AddKey(KeyNum);
+
+        if (clip != null)
+            SoundManager.Instance.PlayAudio(clip);
+
         Destroy(gameObject);
     }
 }

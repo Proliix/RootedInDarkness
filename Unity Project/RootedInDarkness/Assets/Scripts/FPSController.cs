@@ -31,7 +31,6 @@ public class FPSController : MonoBehaviour
         if (characterController.isGrounded)
         {
             moveDirection.y = 0f;
-            Debug.Log("player is grounded");
 
         }
 

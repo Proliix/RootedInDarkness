@@ -5,6 +5,8 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     List<int> keys;
+    bool hasMachete = false;
+    bool hasScrewdriver = false;
 
     private void Start()
     {
@@ -15,6 +17,25 @@ public class InventoryManager : MonoBehaviour
         keys.Add(keyNum);
     }
 
+    public void AddMachete()
+    {
+        hasMachete = true;
+    }
+
+    public bool CheckMachete()
+    {
+        return hasMachete;
+    }
+
+    public void AddScrewdriver()
+    {
+        hasMachete = true;
+    }
+
+    public bool CheckScrewdriver()
+    {
+        return hasScrewdriver;
+    }
     public bool FindKey(int keyNum)
     {
         bool returnValue = false;

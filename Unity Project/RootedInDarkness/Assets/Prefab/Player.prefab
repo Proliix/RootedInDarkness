@@ -132,6 +132,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactLenght: 2
+  idle: {fileID: 21300000, guid: 6c342ee4a30ae404e84ced933499ee5d, type: 3}
+  point: {fileID: 21300000, guid: 52785e76c07e69b49a446dea1c305091, type: 3}
+  interact: {fileID: 21300000, guid: 209be7fd1f45fde408c149526fb7e303, type: 3}
+  grab: {fileID: 21300000, guid: 4c5ec0932e095ad458ed104cacbfff14, type: 3}
+  key: {fileID: 21300000, guid: 43d9c29d89f8cfa408a313e628f9e125, type: 3}
+  machete: {fileID: 21300000, guid: 8e7491ace7f04034d9a490a97b3745db, type: 3}
+  screwdriver: {fileID: 21300000, guid: e8dc8bdb5894b7b428c45df2a00ed67a, type: 3}
+  fuck: {fileID: 21300000, guid: 9f4c7e0f245e7b54db796b4a5c922a92, type: 3}
+  currentViewModel: 0
+  currentIdle: 0
+  hudImage: {fileID: 0}
 --- !u!1 &7629442961063787710
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +176,7 @@ Transform:
   m_Children:
   - {fileID: 1754319180}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7629442961063787704
 MonoBehaviour:

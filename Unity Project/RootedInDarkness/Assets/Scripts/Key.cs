@@ -16,6 +16,7 @@ public class Key : MonoBehaviour, IInteractable
     {
         Debug.LogError(KeyNum);
         invManager.AddKey(KeyNum);
+        InteractController.Instance.ChangeIdleState(ViewModelType.Key);
 
         if (clip != null)
             SoundManager.Instance.PlayAudio(clip);

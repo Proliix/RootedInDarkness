@@ -36,7 +36,7 @@ public class MenuManager : MonoBehaviour
 
     public void ChangeSceneToGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     

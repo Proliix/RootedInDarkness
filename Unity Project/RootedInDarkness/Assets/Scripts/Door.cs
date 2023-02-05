@@ -32,6 +32,10 @@ public class Door : MonoBehaviour, IInteractable
 
     private void OpenDoor()
     {
+        if (needKey)
+            InteractController.Instance.ResetIdleState();
+
+        SoundManager.Instance.PlayAudio(openClip);
         int LayerIgnoreRaycast = LayerMask.NameToLayer("Default");
         gameObject.layer = LayerIgnoreRaycast;
         anim.SetTrigger("Open");

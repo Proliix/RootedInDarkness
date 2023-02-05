@@ -46,11 +46,12 @@ public class SoundManager : MonoBehaviour
 
     private void RandomizeAmbianceTimer()
     {
-        randomAmbianceTimer = Random.Range(20, 45);
+        randomAmbianceTimer = Random.Range(15, 30);
     }
 
     public void PlayRandomSoundEffect()
     {
+        Debug.Log("Playing sound");
         int randomIndex = Random.Range(0, audioClips.Length - 1);
         effectSource.PlayOneShot(audioClips[randomIndex]);
         RandomizeAmbianceTimer();

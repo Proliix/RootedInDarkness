@@ -21,8 +21,15 @@ public class PowerSwitch : MonoBehaviour, IInteractable
             int LayerIgnoreRaycast = LayerMask.NameToLayer("Default");
             gameObject.layer = LayerIgnoreRaycast;
             anim.SetTrigger("Switch");
+            StartCoroutine(WaitForScarySound());
             toggler.UpdateObjects();
         }
+    }
+
+    IEnumerator WaitForScarySound()
+    {
+        yield return new WaitForSeconds(1);
+        SoundManager.Instance.PlayRandomSoundEffect();
     }
 
     public void ChangeInteractable(bool value)

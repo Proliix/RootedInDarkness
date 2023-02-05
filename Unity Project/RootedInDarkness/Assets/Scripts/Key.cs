@@ -14,7 +14,6 @@ public class Key : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-        Debug.LogError(KeyNum);
         invManager.AddKey(KeyNum);
         InteractController.Instance.ChangeIdleState(ViewModelType.Key);
 

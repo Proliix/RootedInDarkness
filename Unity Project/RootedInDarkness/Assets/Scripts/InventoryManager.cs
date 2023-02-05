@@ -29,7 +29,7 @@ public class InventoryManager : MonoBehaviour
 
     public void AddScrewdriver()
     {
-        hasMachete = true;
+        hasScrewdriver = true;
     }
 
     public bool CheckScrewdriver()
@@ -51,5 +51,5 @@ public class InventoryManager : MonoBehaviour
         return returnValue;
     }
 
-    
+
 }

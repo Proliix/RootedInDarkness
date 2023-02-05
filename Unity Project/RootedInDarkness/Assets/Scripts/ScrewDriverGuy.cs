@@ -5,6 +5,9 @@ using UnityEngine;
 public class ScrewDriverGuy : MonoBehaviour, IInteractable
 {
     [SerializeField] GameObject hand;
+    [SerializeField] bool hasObjToggler = false;
+
+    GameobjectToggler toggler;
     InventoryManager invManager;
     public void Interact()
     {
@@ -15,6 +18,9 @@ public class ScrewDriverGuy : MonoBehaviour, IInteractable
             InteractController.Instance.ChangeIdleState(ViewModelType.Screwdriver);
             hand.SetActive(false);
             invManager.AddScrewdriver();
+
+            if (hasObjToggler)
+                toggler.UpdateObjects();
         }
     }
 
@@ -22,6 +28,9 @@ public class ScrewDriverGuy : MonoBehaviour, IInteractable
     void Start()
     {
         invManager = GameObject.FindWithTag("GameController").GetComponent<InventoryManager>();
+
+        if (hasObjToggler)
+            toggler = gameObject.GetComponent<GameobjectToggler>();
     }
 
 }

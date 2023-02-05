@@ -18,6 +18,7 @@ public class ElectricalCabinet : MonoBehaviour, IInteractable
             gameObject.layer = LayerIgnoreRaycast;
             gameObject.GetComponent<MeshCollider>().enabled = true;
             powerSwitch.ChangeInteractable(true);
+            InteractController.Instance.ResetIdleState();
         }
     }
 

@@ -10,7 +10,8 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] bool needKey = true;
     [SerializeField] bool canOpen = false;
     [SerializeField] bool hasObjToggler = false;
-
+    [SerializeField] bool hasLockedAnim = false;
+   
     GameobjectToggler toggler;
     InventoryManager invManager;
     Animator anim;
@@ -27,7 +28,7 @@ public class Door : MonoBehaviour, IInteractable
 
         if (canOpen)
             OpenDoor();
-        else if (lockedClips.Length > 0)
+        else if (lockedClips.Length > 0 && hasLockedAnim)
         {
             int r = Random.Range(0, lockedClips.Length);
             SoundManager.Instance.PlayAudio(lockedClips[r]);

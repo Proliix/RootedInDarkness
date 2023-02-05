@@ -36,7 +36,7 @@ public class MenuManager : MonoBehaviour
 
     public void ChangeSceneToGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     
@@ -63,6 +63,12 @@ public class MenuManager : MonoBehaviour
     public void YesButtonDeselected()
     {
         YesImage.enabled = false;
+    }
+
+    private void Start()
+    {
+        Cursor.visible = true; 
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ExitGame()

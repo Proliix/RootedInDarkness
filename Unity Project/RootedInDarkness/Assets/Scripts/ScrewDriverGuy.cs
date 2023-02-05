@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScrewDriverGuy : MonoBehaviour, IInteractable
 {
     [SerializeField] GameObject hand;
+    [SerializeField] AudioClip pickupSound;
     [SerializeField] bool hasObjToggler = false;
 
     GameobjectToggler toggler;
@@ -18,7 +19,7 @@ public class ScrewDriverGuy : MonoBehaviour, IInteractable
             InteractController.Instance.ChangeIdleState(ViewModelType.Screwdriver);
             hand.SetActive(false);
             invManager.AddScrewdriver();
-
+            SoundManager.Instance.PlayAudio(pickupSound);
             if (hasObjToggler)
                 toggler.UpdateObjects();
         }

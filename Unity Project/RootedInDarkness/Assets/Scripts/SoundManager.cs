@@ -52,7 +52,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayRandomSoundEffect()
     {
-        int randomIndex = Random.Range(0, audioClips.Length);
+        int randomIndex = Random.Range(0, audioClips.Length-1);
         effectSource.PlayOneShot(audioClips[randomIndex]);
         RandomizeAmbianceTimer();
         Debug.Log("Playing: " + audioClips[randomIndex].name);

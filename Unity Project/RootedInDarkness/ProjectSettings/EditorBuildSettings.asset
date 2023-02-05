@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProlixScene.unity
     guid: c6fecca6d5a9cad45994e1c3c8a3f9df
+  - enabled: 1
+    path: Assets/Scenes/cutsceneEnd.unity
+    guid: c51325bb7a609b14683deb5b5b7d2c37
   m_configObjects: {}

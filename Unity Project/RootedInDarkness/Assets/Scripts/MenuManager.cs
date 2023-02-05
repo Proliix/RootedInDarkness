@@ -67,6 +67,7 @@ public class MenuManager : MonoBehaviour
 
     public void ExitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(4);
+        //Application.Quit();
     }
 }

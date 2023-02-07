@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MouseController : MonoBehaviour
 {
-    private float mouseSensitivity = 100.0f;
+    [SerializeField] private float mouseSensitivity = 100.0f;
     private float rotY;
     public Camera mainCamera;
 

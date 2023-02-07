@@ -9,7 +9,10 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] int keyNum;
     [SerializeField] bool needKey = true;
     [SerializeField] bool canOpen = false;
-
+    [SerializeField] bool hasObjToggler = false;
+    [SerializeField] bool hasLockedAnim = false;
+   
+    GameobjectToggler toggler;
     InventoryManager invManager;
     Animator anim;
 
@@ -20,9 +23,12 @@ public class Door : MonoBehaviour, IInteractable
             canOpen = invManager.FindKey(keyNum);
         }
 
+        if (hasObjToggler)
+            toggler = gameObject.GetComponent<GameobjectToggler>();
+
         if (canOpen)
             OpenDoor();
-        else if (lockedClips.Length > 0)
+        else if (lockedClips.Length > 0 && hasLockedAnim)
         {
             int r = Random.Range(0, lockedClips.Length);
             SoundManager.Instance.PlayAudio(lockedClips[r]);
@@ -39,6 +45,8 @@ public class Door : MonoBehaviour, IInteractable
         int LayerIgnoreRaycast = LayerMask.NameToLayer("Default");
         gameObject.layer = LayerIgnoreRaycast;
         anim.SetTrigger("Open");
+        if (hasObjToggler)
+            toggler.UpdateObjects();
     }
 
     // Start is called before the first frame update
@@ -48,9 +56,4 @@ public class Door : MonoBehaviour, IInteractable
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

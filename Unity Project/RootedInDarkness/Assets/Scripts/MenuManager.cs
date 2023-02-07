@@ -65,6 +65,12 @@ public class MenuManager : MonoBehaviour
         YesImage.enabled = false;
     }
 
+    private void Start()
+    {
+        Cursor.visible = true; 
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void ExitGame()
     {
         Application.Quit();

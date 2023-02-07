@@ -24,7 +24,6 @@ public class SoundManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -47,26 +46,26 @@ public class SoundManager : MonoBehaviour
 
     private void RandomizeAmbianceTimer()
     {
-        randomAmbianceTimer = Random.Range(30, 60);
+        randomAmbianceTimer = Random.Range(15, 30);
     }
 
     public void PlayRandomSoundEffect()
     {
-        int randomIndex = Random.Range(0, audioClips.Length-1);
+        Debug.Log("Playing sound");
+        int randomIndex = Random.Range(0, audioClips.Length - 1);
         effectSource.PlayOneShot(audioClips[randomIndex]);
         RandomizeAmbianceTimer();
-        Debug.Log("Playing: " + audioClips[randomIndex].name);
+        //Debug.Log("Playing: " + audioClips[randomIndex].name);
         timer = -audioClips[randomIndex].length;
-        
+
     }
 
     public void PlayAudio(AudioClip clip)
     {
-        Debug.Log("Playing: " + clip.name);
-        
-        clipSource.PlayOneShot(clip);
-        
-    }
+       // Debug.Log("Playing: " + clip.name);
 
+        clipSource.PlayOneShot(clip);
+
+    }
 
 }
